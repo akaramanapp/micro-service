@@ -2,13 +2,11 @@ package com.category.Category.Controller;
 import com.category.Category.Entity.Category;
 import com.category.Category.Service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
+@RequestMapping("/category")
 public class CategoryController {
 
     @Autowired
@@ -19,8 +17,13 @@ public class CategoryController {
         return "Category List";
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public Category saveCategory(@RequestBody Category category) {
         return _categoryService.saveCategory(category);
+    }
+
+    @GetMapping("/{id}")
+    public Category findByCategoryId(@PathVariable("id") Long categoryId) {
+        return  _categoryService.findByCategory(categoryId);
     }
 }

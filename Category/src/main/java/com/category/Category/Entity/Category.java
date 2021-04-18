@@ -1,5 +1,4 @@
 package com.category.Category.Entity;
-
 import lombok.Data;
 
 import javax.persistence.Entity;

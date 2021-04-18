@@ -1,9 +1,9 @@
 server:
-  port: 9002
+  port: 9001
 
 spring:
   application:
-    name: product-service
+    name: category-service
   cloud:
     config:
       enabled: true
